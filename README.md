@@ -1,15 +1,15 @@
-Predix App POC
+Predix POC
 ===================
 This is a sample Predix App which includes:
-	- Usage of data service using Hibernate & Postgres
+	- Usage of data service using JDBCTemplate & Postgres
 
 ## Project setup
 
 1. Download the project  
  ```
-  $ git clone https://github.build.ge.com/212393369/PredixDataServiceHibernat.git  
+  $ git clone https://github.build.ge.com/212393369/PredixDataServiceJDBCTemplate.git  
   
-  $ cd PredixDataServiceHibernat
+  $ cd PredixDataServiceJDBCTemplate
   
   $ Make changes in \src\main\resources\application.properties file
   
@@ -31,7 +31,7 @@ This is a sample Predix App which includes:
     		buildpack: java_buildpack
     		path: target/PredixDataService-0.0.1-SNAPSHOT.jar
 		services:
-   			- my-postgres [postgres service in Predix] 
+   			- my-postgres [postgres service name in Predix] 
   $ mvn clean package  
   ```
 2. To load in eclipse   
@@ -54,12 +54,13 @@ This is a sample Predix App which includes:
 4. Push to cloud  
 
   ```
-   $ cf push bdeb_predixdataservice
+   $ cf push bdeb-predixdataservicejdbctemplate
    
    $ cf a
    
    $ Try the app url in browser
    
-   https://bdeb-predixdataservice.run.aws-usw02-pr.ice.predix.io/av/tm/dataService/userForms [ to get list of Users]
+   		https://bdeb-predixdataservicejdbctemplate.run.aws-usw02-pr.ice.predix.io/av/tm/dataService/userForms  [ to get details of all Users]
+   		https://bdeb-predixdataservicejdbctemplate.run.aws-usw02-pr.ice.predix.io/av/tm/dataService/userForm/1 [ to get details of Users having id of 1]
    
   ```
