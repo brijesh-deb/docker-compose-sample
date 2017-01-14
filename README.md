@@ -1,7 +1,6 @@
 Predix POC
 ===================
-This is a sample Predix App which includes:
-	- Usage of data service using JDBCTemplate & Postgres
+This is a sample Predix App which includes: 1)Usage of data service using JDBCTemplate & Postgres 2) Log4j2 3) logstash 4)kibana
 
 ## Project setup
 
