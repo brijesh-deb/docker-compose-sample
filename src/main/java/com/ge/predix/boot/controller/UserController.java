@@ -5,6 +5,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.Context;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,9 +23,12 @@ public class UserController {
 	@Autowired
 	UserService userService; 
 	
+	private static Logger logger = LogManager.getLogger();
+	
 	@RequestMapping(value="userForms",method=RequestMethod.GET)
 	public List<PredixUserDto> getAllUserDetails(@Context HttpServletResponse servletResponse) 
 	{
+		logger.info("Log4j2 : Inside UserController: getAllUserDetails");
 		System.out.println(" Inside UserController: getAllUserDetails");
 		try {
 			servletResponse.setHeader("Access-Control-Allow-Origin", "*");
@@ -37,6 +42,7 @@ public class UserController {
 	@RequestMapping(value="userForm/{id}",method=RequestMethod.GET)
 	public PredixUserDto getUserDetails(@PathVariable(value="id") Long id,@Context HttpServletResponse servletResponse) 
 	{
+		logger.info("Log4j2 : Inside UserController: getUserDetails");
 		System.out.println(" Inside UserController: getUserDetails");
 		servletResponse.setHeader("Access-Control-Allow-Origin", "*");
 		PredixUserDto userDto = null;
