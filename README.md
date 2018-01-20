@@ -22,14 +22,19 @@ This sample shows how Docker Compose can be used for multi container app. Two co
   - mvn clean package
 - Move the application code(along with target folder) to ec2 instance (use WinSCP)
 - Go to folder which has docker-compose.yml and run following commands
+  - docker build -f Dockerfile -t springboot-docker-compose-demo .
+  - /usr/bin/docker-compose -f docker-compose.yml up
 - Database setup
   - Access postgres using local pgadmin
-	  - Host: public ip of ec2
-		-	Port: 5432
-		- User:postgres
+    - Host: public ip of ec2
+    - Port: 5432
+    - User:postgres
     - Password:admin123
-```
-docker build -f Dockerfile -t springboot-docker-compose-demo .
-/usr/bin/docker-compose -f docker-compose.yml up
-```
+  - Create a table "user_form" in public schema
+    - id/bigint
+    - column1/text
+    - column2/text
+    - column3/text
+    - column4/text
+  - Insert some dummy data 
 - Test application: [Public IP of EC2 instance]:8080/data/userForms
