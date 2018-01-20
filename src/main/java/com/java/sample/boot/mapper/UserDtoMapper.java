@@ -1,15 +1,15 @@
-package com.ge.predix.boot.mapper;
+package com.java.sample.boot.mapper;
 
-import com.ge.predix.boot.dto.PredixUserDto;
-import com.ge.predix.boot.entity.PredixUser;
+import com.java.sample.boot.dto.UserDto;
+import com.java.sample.boot.entity.User;
 
-public class PredixUserDtoMapper {
+public class UserDtoMapper {
 
-	public static PredixUserDto mapUserDto(PredixUser user){
+	public static UserDto mapUserDto(User user){
 		if(null==user){
 			return null;
 		}
-		PredixUserDto userDto = new PredixUserDto();
+		UserDto userDto = new UserDto();
 		userDto.setColumn1(user.getColumn1());
 		userDto.setColumn2(user.getColumn2());
 		userDto.setColumn3(user.getColumn3());
@@ -18,11 +18,11 @@ public class PredixUserDtoMapper {
 		return userDto;
 	}
 	
-	public static PredixUser mapUserEntity(PredixUserDto userDto){
+	public static User mapUserEntity(UserDto userDto){
 		if(null==userDto){
 			return null;
 		}
-		PredixUser user = new PredixUser();
+		User user = new User();
 		user.setColumn1(userDto.getColumn1());
 		user.setColumn2(userDto.getColumn2());
 		user.setColumn3(userDto.getColumn3());

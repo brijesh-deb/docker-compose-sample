@@ -1,4 +1,4 @@
-package com.ge.predix.boot;
+package com.java.sample.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

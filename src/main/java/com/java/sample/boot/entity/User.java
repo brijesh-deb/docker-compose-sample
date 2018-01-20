@@ -1,15 +1,31 @@
-package com.ge.predix.boot.dto;
+package com.java.sample.boot.entity;
 
-import com.sun.xml.txw2.annotation.XmlElement;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@XmlElement
-public class PredixUserDto {
+@Entity
+@Table(name = "user_form")
+public class User {
 
+	@Id
+	@SequenceGenerator(name = "user_form_id_seq", sequenceName = "user_form_id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_form_id_seq")
+	@Column(name = "id", nullable=false,unique=true)
 	private long id;
+	@Column(name = "column1")
 	private String column1;
+	@Column(name = "column2")
 	private String column2;
+	@Column(name = "column3")
 	private String column3;
+	@Column(name = "column4")
 	private String column4;
+	
 	public long getId() {
 		return id;
 	}
@@ -40,5 +56,4 @@ public class PredixUserDto {
 	public void setColumn4(String column4) {
 		this.column4 = column4;
 	}
-	
 }

@@ -1,7 +1,0 @@
----
-applications:
-  - name: mohg_spring_data_service
-    buildpack: java_buildpack
-    path: target/PredixDataService-0.0.1-SNAPSHOT.jar
-services:
-   - my-postgres

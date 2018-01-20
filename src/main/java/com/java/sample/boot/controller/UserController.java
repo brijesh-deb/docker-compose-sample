@@ -1,4 +1,4 @@
-package com.ge.predix.boot.controller;
+package com.java.sample.boot.controller;
 
 import java.util.List;
 
@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ge.predix.boot.dto.PredixUserDto;
-import com.ge.predix.boot.service.UserService;
+import com.java.sample.boot.dto.UserDto;
+import com.java.sample.boot.service.UserService;
 
 @RestController
-@RequestMapping("av/tm/dataService")
+@RequestMapping("/data")
 public class UserController {
 
 	@Autowired
@@ -26,7 +26,7 @@ public class UserController {
 	private static Logger logger = LogManager.getLogger();
 	
 	@RequestMapping(value="userForms",method=RequestMethod.GET)
-	public List<PredixUserDto> getAllUserDetails(@Context HttpServletResponse servletResponse) 
+	public List<UserDto> getAllUserDetails(@Context HttpServletResponse servletResponse) 
 	{
 		logger.info("Log4j2 : Inside UserController: getAllUserDetails");
 		System.out.println(" Inside UserController: getAllUserDetails");
@@ -40,12 +40,12 @@ public class UserController {
 	}
 
 	@RequestMapping(value="userForm/{id}",method=RequestMethod.GET)
-	public PredixUserDto getUserDetails(@PathVariable(value="id") Long id,@Context HttpServletResponse servletResponse) 
+	public UserDto getUserDetails(@PathVariable(value="id") Long id,@Context HttpServletResponse servletResponse) 
 	{
 		logger.info("Log4j2 : Inside UserController: getUserDetails");
 		System.out.println(" Inside UserController: getUserDetails");
 		servletResponse.setHeader("Access-Control-Allow-Origin", "*");
-		PredixUserDto userDto = null;
+		UserDto userDto = null;
 		try {
 			userDto=userService.getById(id);
 		} catch (Exception e) {
