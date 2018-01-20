@@ -8,12 +8,12 @@ services:
           - db
     db:
         container_name: sample_db
-        image: postgres:9.5
+        image: postgres
         volumes:
             - sample_db:/var/lib/postgresql/data
         environment:
-            - POSTGRES_PASSWORD=sample
-            - POSTGRES_USER=sample
+            - POSTGRES_PASSWORD=admin123
+            - POSTGRES_USER=postgres
             - POSTGRES_DB=sample
             - PGDATA=/var/lib/postgresql/data/pgdata
         ports:
