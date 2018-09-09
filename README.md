@@ -22,7 +22,8 @@ This sample shows how Docker Compose can be used for multi container app. Two co
   - mvn clean package
 - Move the application code(along with target folder) to ec2 instance (use WinSCP)
 - Go to folder which has docker-compose.yml and run following commands
-  - docker build -f Dockerfile -t springboot-docker-compose-demo .
+  - docker build -f Dockerfile -t springboot-docker-compose-demo . [create docker image]
+  - docker images [check if image is created]
   - /usr/bin/docker-compose -f docker-compose.yml up
 - Database setup
   - Access postgres using local pgadmin
